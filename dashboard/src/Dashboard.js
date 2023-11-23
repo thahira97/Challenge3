@@ -4,7 +4,8 @@ import { useState } from "react";
 import MyChartComponent from "./ChartComponent";
 import notes from "./assets/last-visited-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faAward } from "@fortawesome/free-solid-svg-icons";
+import achieve from "./assets/Hfrsd4HcVe.png";
 const Dashboard = () => {
   const tabsData = [
     {
@@ -65,7 +66,7 @@ const Dashboard = () => {
   return (
     <main className="main-container">
       <h1>Welcome Thahira</h1>
-      <section className="main-sections">
+
       <section className="first-section">
         <Card>
           <h4>My Progress</h4>
@@ -123,10 +124,70 @@ const Dashboard = () => {
         </Card>
       </section>
       <section className="second-section">
-        <Card>
-          <h4></h4>
+        <Card className="card1">
+          <aside className="leader-head">
+            <h4>Leaderboard ?</h4>
+            <button className="buttons-17">View Leaderboard</button>
+          </aside>
+          <div className="form-components">
+            <form className="form-elements">
+              <select>
+                <option>Prepr</option>
+              </select>
+              <select>
+                <option>All Labs</option>
+              </select>
+              <select>
+                <option>All Challenges</option>
+              </select>
+              <select>
+                <option>Learning</option>
+              </select>
+            </form>{" "}
+            <button className="buttons-19">Clear Filters</button>
+            <table className="board">
+              <colgroup span="4 "></colgroup>
+              <tr className="main-table">
+                <th>#</th>
+                <th>Username</th>
+                <th>Learning Points</th>
+                <th>Learning Rank</th>
+                <th>Achievement</th>
+              </tr>
+              <br></br>
+              <tr className="side-table1">
+                <td>1</td>
+                <td>Thahira Sheerin</td>
+                <td>1528</td>
+                <td>5</td>
+                <td>2</td>
+              </tr>
+              <br></br>
+              <tr>
+                <td>2</td>
+                <td>Thameem</td>
+                <td>1234</td>
+                <td>9</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
         </Card>
-      </section>
+        <Card>
+          <h4>
+            {" "}
+            <FontAwesomeIcon icon={faAward} style={{ color: "#795ace" }} />{" "}
+            Latest Achievement
+          </h4>
+          <img src={achieve} style={{ width: "max-content" }}></img>
+          <h1 style={{ color: "#795ace", textAlign: "center" }}>Participant </h1>
+          <div className="acheive-buttons">
+            <button className="buttons-19">View Detail</button>
+          <br></br>
+          <button className="buttons-19">Share</button>
+          </div>
+          
+        </Card>
       </section>
     </main>
   );
