@@ -11,11 +11,11 @@ const Dashboard = () => {
             You joined PreprLabs on Nov 13, 2023,Here is your challenge journey.{" "}
           </p>
           <img src={""} alt="lab-img" style={{ width: "100px" }}></img>
-          <ul>
-            <li>Project Submitted:</li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul className="inner-tabs">
+            <li>Project Submitted:</li><b>2</b>
+            <li>Project Created:</li><b>2</b>
+            <li>Invited:</li><b>2</b>
+            <li>Followed:</li><b>2</b>
           </ul>
         </div>
       ),
@@ -69,9 +69,9 @@ const Dashboard = () => {
                  {tab.title}
               </li>
             ))
-        
             }
           </ul>
+          <div className="tab-content">{tabsData[activeTab].content}</div>
         </Card>
       </section>
     </main>
