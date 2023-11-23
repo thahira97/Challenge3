@@ -5,7 +5,7 @@ const Dashboard = () => {
     <main className="main-container">
       <h1>Welcome Thahira</h1>
      <section>
-
+    
      </section>
     </main>
   )
