@@ -14,7 +14,7 @@ import {
   faComputer,
 } from "@fortawesome/free-solid-svg-icons";
 
-import avatar from "../assets/pexels-elina-fairytale-3810968.jpg";
+import avatar from "./assets/pexels-elina-fairytale-3810968.jpg";
 const NavLinks = () => {
   const [expand, setExpand] = useState(false);
   const expandHandler = () => {
