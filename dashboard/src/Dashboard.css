@@ -148,8 +148,28 @@ li {
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(5, 0.2fr);
-  grid-auto-rows: min-content(10px, auto);
+  grid-auto-rows: min-content;
   grid-gap: 10px;
+}
+
+.leader-ranks p:nth-child(5n + 1) {
+  background-color: #ffcccb; 
+}
+
+.leader-ranks p:nth-child(5n + 2) {
+  background-color: #c2e7fc; 
+}
+
+.leader-ranks p:nth-child(5n + 3) {
+  background-color: #d0f0c0; 
+}
+
+.leader-ranks p:nth-child(5n + 4) {
+  background-color: #ffd700;
+}
+
+.leader-ranks p:nth-child(5n + 5) {
+  background-color: #dda0dd; 
 }
 
 .third-section {

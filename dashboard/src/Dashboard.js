@@ -4,10 +4,14 @@ import { useState } from "react";
 import MyChartComponent from "./ChartComponent";
 import notes from "./assets/last-visited-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+
 import {
   faCalendarDays,
   faAward,
   faFlask,
+  faSheetPlastic,
+  faPuzzlePiece
 } from "@fortawesome/free-solid-svg-icons";
 import achieve from "./assets/Hfrsd4HcVe.png";
 import image from "./assets/pexels-elina-fairytale-3810968.jpg";
@@ -51,8 +55,8 @@ const Dashboard = () => {
       ),
     },
     {
-      title: "Labs",
-      content: <h1>WHY?</h1>,
+      title: "Resources",
+      content: <h1>No Resources!</h1>,
     },
   ];
 
@@ -352,7 +356,7 @@ const Dashboard = () => {
           </div>
         </Card>
         <Card>
-          <h4>18 Challenges</h4>
+          <h4><FontAwesomeIcon icon={faPuzzlePiece} style={{color:"#795ace"}}/> 18 Challenges</h4>
           <ul className="tabs">
             {tabsData3.map((tab, index) => (
               <li
@@ -371,8 +375,9 @@ const Dashboard = () => {
         </Card>
         <Card>
           <div className="tab4-header">
-            <h4>2 Projects</h4>
-          <button className="buttons-17">Create</button>
+            <h4><FontAwesomeIcon icon={faSheetPlastic} style={{color:"#795ace"}} /> 2 Projects</h4>
+         <a href="/create/project"><button className="buttons-17">Create</button>
+         </a> 
           </div>
           
           <ul className="tabs">
