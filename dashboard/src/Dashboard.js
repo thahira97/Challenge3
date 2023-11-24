@@ -367,7 +367,11 @@ const Dashboard = () => {
           </div>
         </Card>
         <Card>
-          <h4>2 Projects</h4>
+          <div className="tab4-header">
+            <h4>2 Projects</h4>
+          <button className="buttons-17">Create</button>
+          </div>
+          
           <ul className="tabs">
             {tabsData4.map((tab, index) => (
               <li
