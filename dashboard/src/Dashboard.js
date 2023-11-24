@@ -5,7 +5,7 @@ import MyChartComponent from "./ChartComponent";
 import notes from "./assets/last-visited-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import {
   faCalendarDays,
   faAward,
@@ -312,6 +312,16 @@ const Dashboard = () => {
               <p>2134</p>
               <p>7</p>
               <p>5</p>
+              <p>3</p>
+              <p>Maryam</p>
+              <p>1792</p>
+              <p>4</p>
+              <p>2</p>
+              <p>4</p>
+              <p>Hana</p>
+              <p>1792</p>
+              <p>5</p>
+              <p>2</p>
             </div>
           </div>
         </Card>
@@ -376,8 +386,10 @@ const Dashboard = () => {
         <Card>
           <div className="tab4-header">
             <h4><FontAwesomeIcon icon={faSheetPlastic} style={{color:"#795ace"}} /> 2 Projects</h4>
-         <a href="/create/project"><button className="buttons-17">Create</button>
-         </a> 
+         <a href="/create/project">
+          <button className="buttons-17">Create
+          </button>
+       </a>
           </div>
           
           <ul className="tabs">
