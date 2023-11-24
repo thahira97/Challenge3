@@ -51,7 +51,7 @@ const NavLinks = () => {
   return (
     <ul className="nav-links">
       <li>
-        <a href="/explore" exact>
+        <a href="/" exact>
           Explore
         </a>
       </li>

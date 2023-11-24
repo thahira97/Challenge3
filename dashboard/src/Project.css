@@ -1,0 +1,12 @@
+.main-container2 {
+  margin: 100px;
+}
+
+.small-block {
+  margin: 10px;
+  border: 2px solid #6666de;
+  text-align: center;
+  background-color:#9696eb;
+  border-radius: 20px;
+  color: white;
+}
