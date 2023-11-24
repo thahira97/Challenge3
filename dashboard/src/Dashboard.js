@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import achieve from "./assets/Hfrsd4HcVe.png";
 import image from "./assets/pexels-elina-fairytale-3810968.jpg";
-import logo from "./assets/logoNew.png"
+import logo from "./assets/logoNew.png";
 const Dashboard = () => {
   const tabsData = [
     {
@@ -106,14 +106,51 @@ const Dashboard = () => {
       title: "Following",
       content: (
         <div>
-          <p>You joined PreprLabs on Nov 13, 2023,Here is your lab journey. </p>
+          <p>You are Following F.U.N. </p>
           <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+        </div>
+      ),
+    },
+  ];
+
+  const tabsData4 = [
+    {
+      title: `MyProjects`,
+      content: (
+        <div>
           <ul>
-            <li>Project Submitted:</li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              thahirasheerin - Frontend Developer Challenge 2: Login System
+            </li>
+            <li>
+              thahirasheerin - Frontend Developer Challenge 3: Dashboard and
+              Project Creation
+            </li>
+            <li>
+              thahirasheerin - Frontend Developer Challenge 1: Web Page Creation
+            </li>
           </ul>
+
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+        </div>
+      ),
+    },
+    ,
+    {
+      title: "NeedAccess",
+      content: (
+        <div>
+          <p>No Access</p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+        </div>
+      ),
+    },
+    {
+      title: "Invited",
+      content: (
+        <div>
+          <p>No Invitations</p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
         </div>
       ),
     },
@@ -125,18 +162,22 @@ const Dashboard = () => {
     setActiveTab(index);
   };
   const [activeTab2, setActiveTab2] = useState(0);
-  
+
   const handleTabClick2 = (index) => {
     setActiveTab2(index);
   };
 
   const [activeTab3, setActiveTab3] = useState(0);
-  
+
   const handleTabClick3 = (index) => {
     setActiveTab3(index);
   };
 
+  const [activeTab4, setActiveTab4] = useState(0);
 
+  const handleTabClick4 = (index) => {
+    setActiveTab4(index);
+  };
   return (
     <main className="main-container">
       <h1>Welcome Thahira</h1>
@@ -293,11 +334,12 @@ const Dashboard = () => {
           </h4>
           <ul className="tabs">
             {tabsData2.map((tab, index) => (
-              <li key={index} className={index === activeTab2 ? "active" : ""}
-              onClick={() => handleTabClick2(index)}
+              <li
+                key={index}
+                className={index === activeTab2 ? "active" : ""}
+                onClick={() => handleTabClick2(index)}
               >
                 {tab.title}
-                
               </li>
             ))}
           </ul>
@@ -310,8 +352,10 @@ const Dashboard = () => {
           <h4>18 Challenges</h4>
           <ul className="tabs">
             {tabsData3.map((tab, index) => (
-              <li key={index} className={index === activeTab3 ? "active" : ""}
-              onClick={() => handleTabClick3(index)}
+              <li
+                key={index}
+                className={index === activeTab3 ? "active" : ""}
+                onClick={() => handleTabClick3(index)}
               >
                 {tab.title}
               </li>
@@ -322,14 +366,14 @@ const Dashboard = () => {
             {tabsData3[activeTab3] && tabsData3[activeTab3].content}
           </div>
         </Card>
-        {/* <Card>
+        <Card>
           <h4>2 Projects</h4>
           <ul className="tabs">
-            {tabsData.map((tab, index) => (
+            {tabsData4.map((tab, index) => (
               <li
                 key={index}
-                className={index === activeTab ? "active" : ""}
-                onClick={() => handleTabClick(index)}
+                className={index === activeTab4 ? "active" : ""}
+                onClick={() => handleTabClick4(index)}
               >
                 {tab.title}
               </li>
@@ -337,9 +381,9 @@ const Dashboard = () => {
           </ul>
           <div className="tab-content">
             {" "}
-            {tabsData[activeTab] && tabsData[activeTab].content}
+            {tabsData4[activeTab4] && tabsData4[activeTab4].content}
           </div>
-        </Card> */}
+        </Card>
       </section>
     </main>
   );
