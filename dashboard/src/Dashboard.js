@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import achieve from "./assets/Hfrsd4HcVe.png";
 import image from "./assets/pexels-elina-fairytale-3810968.jpg";
+import logo from "./assets/logoNew.png"
 const Dashboard = () => {
   const tabsData = [
     {
@@ -20,7 +21,7 @@ const Dashboard = () => {
           <p>
             You joined PreprLabs on Nov 13, 2023,Here is your challenge journey.{" "}
           </p>
-          <img src={""} alt="lab-img" style={{ width: "100px" }}></img>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
           <ul className="inner-tabs">
             <li>Project Submitted:</li>
             <b>2</b>
@@ -51,11 +52,8 @@ const Dashboard = () => {
     },
     {
       title: "Labs",
-      content: (
-        <h1>WHY?</h1>
-      ),
+      content: <h1>WHY?</h1>,
     },
-
   ];
 
   const tabsData2 = [
@@ -63,9 +61,8 @@ const Dashboard = () => {
       title: "MyLabs",
       content: (
         <div>
-          <p>Front end web developer is responsible for designing, coding, and modifying webpagesusing standard H . You joined PreprLabs on Nov 13, 2023,Here is your challenge journey.{" "}
-          </p>
-          <img src={""} alt="lab-img" style={{ width: "100px" }}></img>
+          <p>Front end web developer is responsible for designing, coding,</p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
         </div>
       ),
     },
@@ -73,18 +70,72 @@ const Dashboard = () => {
       title: "Invited",
       content: (
         <div>
-          <p>
-           No invites bruh!
-          </p>
+          <p>No invites bruh!</p>
         </div>
       ),
     },
   ];
+  const tabsData3 = [
+    {
+      title: "MyChallenges",
+      content: (
+        <div>
+          <p>
+            You joined PreprLabs on Nov 13, 2023,Here is your challenge journey.{" "}
+          </p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+        </div>
+      ),
+    },
+    {
+      title: "Inviited",
+      content: (
+        <div>
+          <p>You joined PreprLabs on Nov 13, 2023,Here is your lab journey. </p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+          <ul>
+            <li>Project Submitted:</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Following",
+      content: (
+        <div>
+          <p>You joined PreprLabs on Nov 13, 2023,Here is your lab journey. </p>
+          <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+          <ul>
+            <li>Project Submitted:</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      ),
+    },
+  ];
+
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
+  const [activeTab2, setActiveTab2] = useState(0);
+  
+  const handleTabClick2 = (index) => {
+    setActiveTab2(index);
+  };
+
+  const [activeTab3, setActiveTab3] = useState(0);
+  
+  const handleTabClick3 = (index) => {
+    setActiveTab3(index);
+  };
+
 
   return (
     <main className="main-container">
@@ -104,7 +155,10 @@ const Dashboard = () => {
               </li>
             ))}
           </ul>
-          <div className="tab-content">  {tabsData[activeTab] && tabsData[activeTab].content}</div>
+          <div className="tab-content">
+            {" "}
+            {tabsData[activeTab] && tabsData[activeTab].content}
+          </div>
         </Card>
         <Card>
           <h4>Continue where you left of</h4>
@@ -239,6 +293,39 @@ const Dashboard = () => {
           </h4>
           <ul className="tabs">
             {tabsData2.map((tab, index) => (
+              <li key={index} className={index === activeTab2 ? "active" : ""}
+              onClick={() => handleTabClick2(index)}
+              >
+                {tab.title}
+                
+              </li>
+            ))}
+          </ul>
+          <div className="tab-content">
+            {" "}
+            {tabsData2[activeTab2] && tabsData2[activeTab2].content}
+          </div>
+        </Card>
+        <Card>
+          <h4>18 Challenges</h4>
+          <ul className="tabs">
+            {tabsData3.map((tab, index) => (
+              <li key={index} className={index === activeTab3 ? "active" : ""}
+              onClick={() => handleTabClick3(index)}
+              >
+                {tab.title}
+              </li>
+            ))}
+          </ul>
+          <div className="tab-content">
+            {" "}
+            {tabsData3[activeTab3] && tabsData3[activeTab3].content}
+          </div>
+        </Card>
+        {/* <Card>
+          <h4>2 Projects</h4>
+          <ul className="tabs">
+            {tabsData.map((tab, index) => (
               <li
                 key={index}
                 className={index === activeTab ? "active" : ""}
@@ -248,8 +335,11 @@ const Dashboard = () => {
               </li>
             ))}
           </ul>
-          <div className="tab-content">  {tabsData2[activeTab] && tabsData2[activeTab].content}</div>
-        </Card>
+          <div className="tab-content">
+            {" "}
+            {tabsData[activeTab] && tabsData[activeTab].content}
+          </div>
+        </Card> */}
       </section>
     </main>
   );
