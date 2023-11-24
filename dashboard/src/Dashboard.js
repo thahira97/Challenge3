@@ -4,8 +4,13 @@ import { useState } from "react";
 import MyChartComponent from "./ChartComponent";
 import notes from "./assets/last-visited-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDays, faAward } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDays,
+  faAward,
+  faFlask,
+} from "@fortawesome/free-solid-svg-icons";
 import achieve from "./assets/Hfrsd4HcVe.png";
+import image from "./assets/pexels-elina-fairytale-3810968.jpg";
 const Dashboard = () => {
   const tabsData = [
     {
@@ -45,14 +50,32 @@ const Dashboard = () => {
       ),
     },
     {
-      title: "Resources",
+      title: "Labs",
+      content: (
+        <h1>WHY?</h1>
+      ),
+    },
+
+  ];
+
+  const tabsData2 = [
+    {
+      title: "MyLabs",
+      content: (
+        <div>
+          <p>Front end web developer is responsible for designing, coding, and modifying webpagesusing standard H . You joined PreprLabs on Nov 13, 2023,Here is your challenge journey.{" "}
+          </p>
+          <img src={""} alt="lab-img" style={{ width: "100px" }}></img>
+        </div>
+      ),
+    },
+    {
+      title: "Invited",
       content: (
         <div>
           <p>
-            You joined PreprLabs on Nov 13, 2023,Here is your Resource journey.{" "}
+           No invites bruh!
           </p>
-          <img src={""} alt="lab-img" style={{ width: "100px" }}></img>
-          <button></button>
         </div>
       ),
     },
@@ -81,7 +104,7 @@ const Dashboard = () => {
               </li>
             ))}
           </ul>
-          <div className="tab-content">{tabsData[activeTab].content}</div>
+          <div className="tab-content">  {tabsData[activeTab] && tabsData[activeTab].content}</div>
         </Card>
         <Card>
           <h4>Continue where you left of</h4>
@@ -145,7 +168,7 @@ const Dashboard = () => {
               </select>
             </form>{" "}
             <button className="buttons-19">Clear Filters</button>
-            <table className="board">
+            {/* <table className="board">
               <colgroup span="4 "></colgroup>
               <tr className="main-table">
                 <th>#</th>
@@ -170,7 +193,24 @@ const Dashboard = () => {
                 <td>9</td>
                 <td>1</td>
               </tr>
-            </table>
+            </table> */}
+            <div className="leader-ranks">
+              <h4>#</h4>
+              <h4>Username</h4>
+              <h4>Learning Points</h4>
+              <h4>Learning Rank</h4>
+              <h4>Achievement</h4>
+              <p>1</p>
+              <p>Thahira Sheerin</p>
+              <p>1792</p>
+              <p>6</p>
+              <p>2</p>
+              <p>2</p>
+              <p>Thameem</p>
+              <p>2134</p>
+              <p>7</p>
+              <p>5</p>
+            </div>
           </div>
         </Card>
         <Card>
@@ -180,13 +220,35 @@ const Dashboard = () => {
             Latest Achievement
           </h4>
           <img src={achieve} style={{ width: "max-content" }}></img>
-          <h1 style={{ color: "#795ace", textAlign: "center" }}>Participant </h1>
+          <h1 style={{ color: "#795ace", textAlign: "center" }}>
+            Participant{" "}
+          </h1>
           <div className="acheive-buttons">
             <button className="buttons-19">View Detail</button>
-          <br></br>
-          <button className="buttons-19">Share</button>
+            <br></br>
+            <button className="buttons-19">Share</button>
           </div>
-          
+        </Card>
+      </section>
+      <section className="third-section">
+        <Card>
+          <h4>
+            {" "}
+            <FontAwesomeIcon icon={faFlask} style={{ color: "#795ace" }} /> 2
+            Labs
+          </h4>
+          <ul className="tabs">
+            {tabsData2.map((tab, index) => (
+              <li
+                key={index}
+                className={index === activeTab ? "active" : ""}
+                onClick={() => handleTabClick(index)}
+              >
+                {tab.title}
+              </li>
+            ))}
+          </ul>
+          <div className="tab-content">  {tabsData2[activeTab] && tabsData2[activeTab].content}</div>
         </Card>
       </section>
     </main>

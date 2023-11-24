@@ -83,7 +83,7 @@ li {
   flex-wrap: wrap;
 }
 .second-section .card1 {
-  flex-grow: 0.5;
+  flex-grow: 0.9;
 }
 .form-elements {
   display: flex;
@@ -143,4 +143,18 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.leader-ranks {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 0.2fr);
+  grid-auto-rows: min-content(10px, auto);
+  grid-gap: 10px;
+}
+
+.third-section {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
