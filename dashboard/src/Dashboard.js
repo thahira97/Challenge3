@@ -132,6 +132,7 @@ const Dashboard = () => {
           </ul>
 
           <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+          <button className="buttons-17">ExploreMore</button>
         </div>
       ),
     },
@@ -142,6 +143,7 @@ const Dashboard = () => {
         <div>
           <p>No Access</p>
           <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+          <button className="buttons-17">ExploreMore</button>
         </div>
       ),
     },
@@ -151,6 +153,7 @@ const Dashboard = () => {
         <div>
           <p>No Invitations</p>
           <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
+          <button className="buttons-17">ExploreMore</button>
         </div>
       ),
     },
