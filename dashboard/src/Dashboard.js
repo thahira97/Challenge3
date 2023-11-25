@@ -270,32 +270,6 @@ const Dashboard = () => {
               </select>
             </form>{" "}
             <button className="buttons-19">Clear Filters</button>
-            {/* <table className="board">
-              <colgroup span="4 "></colgroup>
-              <tr className="main-table">
-                <th>#</th>
-                <th>Username</th>
-                <th>Learning Points</th>
-                <th>Learning Rank</th>
-                <th>Achievement</th>
-              </tr>
-              <br></br>
-              <tr className="side-table1">
-                <td>1</td>
-                <td>Thahira Sheerin</td>
-                <td>1528</td>
-                <td>5</td>
-                <td>2</td>
-              </tr>
-              <br></br>
-              <tr>
-                <td>2</td>
-                <td>Thameem</td>
-                <td>1234</td>
-                <td>9</td>
-                <td>1</td>
-              </tr>
-            </table> */}
             <div className="leader-ranks">
               <h4>#</h4>
               <h4>Username</h4>

@@ -14,7 +14,7 @@ const CreateProject = () => {
           meet submission requirements.
         </p>
       </div>
-      <Card className="create-project">
+      <Card className="create-project" style={{width: "100%"}}>
         <h4>Building your team</h4>
         <p>Building a team is important for your project.</p>
         <aside className="recruit">
@@ -78,6 +78,12 @@ const CreateProject = () => {
           </div>
         </div>
       </Card>
+      <br></br>
+      <div className="lower-buttons">
+        <button className="buttons-17">Back</button>
+      <a href="/"> <button className="buttons-17">Create Project</button>
+      </a> 
+      </div>
     </div>
   );
 };
