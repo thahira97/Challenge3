@@ -77,3 +77,16 @@
 .check1{
   display: flex;
 }
+#question {
+  cursor: pointer;
+}
+
+.image-containter {
+  text-align: center;
+  justify-content: center;
+
+}
+.lower-buttons {
+  display: flex;
+  justify-content: space-around;
+}

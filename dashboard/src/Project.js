@@ -1,7 +1,19 @@
 import "./Project.css";
+import { useState } from "react";
 import Card from "./Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 const Project = () => {
+  const [image, setImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+    console.log(imageUrl);
+    setImage(imageUrl);
+  };
+
   return (
     <div className="main-container2">
       <h1>Create Project</h1>
@@ -82,14 +94,51 @@ const Project = () => {
         <div className="proj-detail3">
           <aside className="check1">
             <input type="checkbox"></input>
-            <p>Allow users outside your team to view your project</p>
+            <p>
+              Allow users outside your team to view your project{" "}
+              <FontAwesomeIcon
+                id="question"
+                icon={faQuestion}
+                style={{ color: "#795ace" }}
+              />{" "}
+            </p>
           </aside>
           <aside className="check1">
             <input type="checkbox"></input>
-            <p>Allow users outside your team to download your project files</p>
+            <p>
+              Allow users outside your team to download your project files{" "}
+              <FontAwesomeIcon
+                id="question"
+                icon={faQuestion}
+                style={{ color: "#795ace" }}
+              />{" "}
+            </p>
           </aside>
         </div>
       </Card>
+      <br></br>
+      <Card className="image-container">
+        <h4>Upload Project Banner</h4>
+        <label htmlFor="fileInput" className="buttons-17">
+          Choose File
+          <input
+            type="file"
+            accept="image/*"
+            id="fileInput"
+            className="form-control"
+            onChange={(e) => handleImageChange(e)}
+            style={{ display: "none" }}
+          />
+        </label>
+        <div>
+          {image && <img src={image} alt="Preview" style={{ width: "20%" }} />}
+        </div>
+      </Card>{" "}
+      <br></br>
+      <div className="lower-buttons">
+        <button className="buttons-17">Cancel</button>
+        <button className="buttons-17">Continue</button>
+      </div>
     </div>
   );
 };
