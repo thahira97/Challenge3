@@ -5,7 +5,10 @@ const Project = () => {
   return (
     <div className="main-container2">
       <h1>Create Project</h1>
-      <p> <b>Challenge:</b> No active challenge selected</p>
+      <p>
+        {" "}
+        <b>Challenge:</b> No active challenge selected
+      </p>
       <div className="small-block">
         <p>
           To browse challenge requirements here, you need to select an active
@@ -75,6 +78,16 @@ const Project = () => {
               </select>
             </form>
           </div>
+        </div>
+        <div className="proj-detail3">
+          <aside className="check1">
+            <input type="checkbox"></input>
+            <p>Allow users outside your team to view your project</p>
+          </aside>
+          <aside className="check1">
+            <input type="checkbox"></input>
+            <p>Allow users outside your team to download your project files</p>
+          </aside>
         </div>
       </Card>
     </div>

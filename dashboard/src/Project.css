@@ -69,3 +69,11 @@
   border: 1px solid #6666de;
   padding: 10px;
 }
+.proj-detail3{
+  display: flex;
+  flex-direction: column;
+}
+
+.check1{
+  display: flex;
+}
