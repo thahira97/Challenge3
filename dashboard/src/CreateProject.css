@@ -1,0 +1,28 @@
+.main-container3 {
+  margin: 50px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recruit {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.customized-form {
+  border-radius: 10px;
+  border: 1px solid #6666de;
+  padding: 10px;
+  width: 100%;
+}
+.create-project{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.all-inputs{
+  display: flex;
+  justify-content: space-evenly;
+}

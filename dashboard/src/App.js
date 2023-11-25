@@ -1,4 +1,5 @@
 
+import CreateProject from './CreateProject';
 import Dashboard from './Dashboard';
 import MainNavigation from './MainNavigation';
 import Project from './Project';
@@ -16,7 +17,9 @@ function App() {
      <Route path="/create/project" exact>
           <Project></Project>
      </Route>
-
+     <Route path="/create/project/1" exact>
+        <CreateProject></CreateProject>
+     </Route>
     </Switch>
    
   </Router>

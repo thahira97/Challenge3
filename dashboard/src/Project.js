@@ -3,6 +3,7 @@ import { useState } from "react";
 import Card from "./Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const [image, setImage] = useState(null);
@@ -137,7 +138,8 @@ const Project = () => {
       <br></br>
       <div className="lower-buttons">
         <button className="buttons-17">Cancel</button>
-        <button className="buttons-17">Continue</button>
+      <a href="/create/project/1"> <button className="buttons-17">Continue</button>
+      </a> 
       </div>
     </div>
   );
