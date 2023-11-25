@@ -14,7 +14,7 @@ const CreateProject = () => {
           meet submission requirements.
         </p>
       </div>
-      <Card className="create-project" style={{width: "100%"}}>
+      <Card className="create-project" style={{ width: "100%" }}>
         <h4>Building your team</h4>
         <p>Building a team is important for your project.</p>
         <aside className="recruit">
@@ -43,16 +43,19 @@ const CreateProject = () => {
           </span>
           <div>
             <h4>Team members</h4>
-          <select className="customized-form">
-            <option value="Team members">Team members</option>
-            <option value="thahira">thahira</option>
-            <option value="sheerin">sheerin</option>
-          </select>
+            <select className="customized-form">
+              <option value="Team members">Team members</option>
+              <option value="thahira">thahira</option>
+              <option value="sheerin">sheerin</option>
+            </select>
           </div>
           <div>
             <h4>Position</h4>
-          <input className="customized-form" type="text" placeholder="Creater">
-          </input>
+            <input
+              className="customized-form"
+              type="text"
+              placeholder="Creater"
+            ></input>
           </div>
         </aside>
         <aside className="check1">
@@ -62,27 +65,28 @@ const CreateProject = () => {
 
         <div className="all-inputs">
           <div>
-          <h4>Team Leader</h4>
-          <input className="customized-form" type="radio">
-          </input>
+            <h4>Team Leader</h4>
+            <input className="customized-form" type="radio"></input>
           </div>
           <div>
-          <h4>Viewer</h4>
-          <input className="customized-form" type="radio">
-          </input>
+            <h4>Viewer</h4>
+            <input className="customized-form" type="radio"></input>
           </div>
           <div>
-          <h4>Editor</h4>
-          <input className="customized-form" type="radio">
-          </input>
+            <h4>Editor</h4>
+            <input className="customized-form" type="radio"></input>
           </div>
         </div>
       </Card>
       <br></br>
       <div className="lower-buttons">
-        <button className="buttons-17">Back</button>
-      <a href="/"> <button className="buttons-17">Create Project</button>
-      </a> 
+        <a href="/create/project">
+          <button className="buttons-17">Back</button>
+        </a>
+        <a href="/">
+          {" "}
+          <button className="buttons-17">Create Project</button>
+        </a>
       </div>
     </div>
   );

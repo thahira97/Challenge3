@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 
 const Project = () => {
   const [image, setImage] = useState(null);
+  const [input, setInput] = useState({
+    title: "",
+    slug: "",
+    
+  })
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -35,8 +40,8 @@ const Project = () => {
             <h4>Title*</h4>
             <input
               type="text"
-              id="title-box"
-              name="title-box"
+              id="titleBox"
+              name="titleBox"
               placeholder="Max. 150 characters"
               required
             ></input>
@@ -46,8 +51,8 @@ const Project = () => {
             <input
               className="input-box"
               type="text"
-              id="slug-box"
-              name="slug-box"
+              id="slugBox"
+              name="slugBox"
               placeholder="Project Slug"
               required
             ></input>
@@ -58,8 +63,8 @@ const Project = () => {
             <h4>Description</h4>
             <input
               type="text"
-              id="text-box"
-              name="text-box"
+              id="textBox"
+              name="textBox"
               placeholder="Max 300 character"
               required
             ></input>
@@ -68,8 +73,8 @@ const Project = () => {
             <form className="proj-title">
               <h4>Active Challenge</h4>
               <select
-                id="active-box"
-                name="active-box"
+                id="activeBox"
+                name="activeBox"
                 placeholder="Select Challenge"
                 required
               >
@@ -81,8 +86,8 @@ const Project = () => {
               <h4>Associated Lab</h4>
               <select
                 type="text"
-                id="active-box"
-                name="active-box"
+                id="activeBox"
+                name="activeBox"
                 placeholder="Select Lab"
                 required
               >
