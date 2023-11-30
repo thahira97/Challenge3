@@ -188,6 +188,31 @@ li {
 .access img:hover {
   cursor: pointer;
 }
+.accessibile-block{
+  background-color: rgb(172, 172, 234);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.toggle-butts {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-items: stretch;
+}
+.access-form input {
+  height: 5vh;
+  border: none;
+  box-shadow: inset;
+  border-radius: 12px;
+}
+
+.access-select {
+  height: 5vh;
+  border: none;
+  box-shadow: inset;
+  border-radius: 12px;
+}
 
 @media (max-width: 767px) {
   

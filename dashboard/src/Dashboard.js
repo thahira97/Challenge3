@@ -19,6 +19,7 @@ import { InputContext } from "./store/input-context";
 import { Link } from "react-router-dom";
 import MainNavigation from "./MainNavigation";
 import accessibilityIcon from "./assets/6175.png";
+import ToggleButton from "./ToggleButton";
 const Dashboard = () => {
   const { input } = useContext(InputContext);
 
@@ -132,10 +133,16 @@ const Dashboard = () => {
           <ul>
             <li>{input.slugBox}</li>
             {input.image && (
-              <img src={input.image} style={{ width: "100px", display: "none" }}></img>
+              <img
+                src={input.image}
+                style={{ width: "100px", display: "none" }}
+              ></img>
             )}
-              {input.image && (
-              <img src={input.image} style={{ width: "100px", display: "" }}></img>
+            {input.image && (
+              <img
+                src={input.image}
+                style={{ width: "100px", display: "" }}
+              ></img>
             )}
             <li>{input.textBox}</li>
           </ul>
@@ -190,222 +197,275 @@ const Dashboard = () => {
   const handleTabClick4 = (index) => {
     setActiveTab4(index);
   };
+  const [show, setShow] = useState(false);
+  const openHandler = () => {
+    setShow(true);
+  };
+  const closeHandler = () => {
+    setShow(false);
+  };
 
   return (
     <>
-    <MainNavigation></MainNavigation>
-    <main className="main-container">
-      <span className="access">
+      <MainNavigation></MainNavigation>
+      <main className="main-container">
+        <span className="access">
           <h1>Welcome Thahira</h1>
-      <img src={accessibilityIcon} style={{width: "100px"}}></img>
-      </span>
-    
-      <section className="first-section">
-        <Card>
-          <h4>My Progress</h4>
-          <ul className="tabs">
-            {tabsData.map((tab, index) => (
-              <li
-                key={index}
-                className={index === activeTab ? "active" : ""}
-                onClick={() => handleTabClick(index)}
-              >
-                {tab.title}
+          <span>
+            <img
+              src={accessibilityIcon}
+              onClick={openHandler}
+              style={{ width: "100px" }}
+            ></img>
+            {show && (
+              <div className="accessibile-block">
+                <h4 style={{textAlign: "center"}}>Accessibility Settings</h4>
+                <form className="access-form" style={{textAlign: "center"}}>
+                  <input type="text" placeholder="Search"></input>
+                </form>
+                <hr></hr>
+                <select className="access-select" style={{width: "min-content", alignSelf: "center"}}>
+                  <option value="language">Select Language</option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                  <option value="Mandarin">Mandarin</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Japanese">Japanese</option>
+                </select>
+                <hr></hr>
+                <aside className="toggle-butts">
+                  <div>
+                    <ToggleButton></ToggleButton>Seizure Safe Profile
+                  </div>
+                 <hr></hr>
+                  <div>
+                    <ToggleButton></ToggleButton>Vision Impaired
+                  </div>
+                 <hr></hr>
+                  <div>
+                    <ToggleButton></ToggleButton>ADHD Friendly
+                  </div>
+                </aside>
+                <hr></hr>
+                <span>
+                  <button className="buttons-17">Reset settings</button>
+                  <button  className="buttons-17" onClick={closeHandler}>Close</button>
+                </span>
+              </div>
+            )}
+          </span>
+        </span>
+
+        <section className="first-section">
+          <Card>
+            <h4>My Progress</h4>
+            <ul className="tabs">
+              {tabsData.map((tab, index) => (
+                <li
+                  key={index}
+                  className={index === activeTab ? "active" : ""}
+                  onClick={() => handleTabClick(index)}
+                >
+                  {tab.title}
+                </li>
+              ))}
+            </ul>
+            <div className="tab-content">
+              {" "}
+              {tabsData[activeTab] && tabsData[activeTab].content}
+            </div>
+          </Card>
+          <Card>
+            <h4>Continue where you left of</h4>
+            <p>Start your PreprLabs journey now!</p>
+            <img
+              src={notes}
+              style={{ width: "150px", justifyContent: "center" }}
+            ></img>
+            <button className="buttons-19">Explore More</button>
+          </Card>
+          <Card>
+            <ul>
+              <h4>Upcoming Challenge Deadlines</h4>
+              <li>
+                {" "}
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  style={{ color: "#5f63dd" }}
+                />
+                Frontend Developer Challenge 1: Web Page
               </li>
-            ))}
-          </ul>
-          <div className="tab-content">
-            {" "}
-            {tabsData[activeTab] && tabsData[activeTab].content}
-          </div>
-        </Card>
-        <Card>
-          <h4>Continue where you left of</h4>
-          <p>Start your PreprLabs journey now!</p>
-          <img
-            src={notes}
-            style={{ width: "150px", justifyContent: "center" }}
-          ></img>
-          <button className="buttons-19">Explore More</button>
-        </Card>
-        <Card>
-          <ul>
-            <h4>Upcoming Challenge Deadlines</h4>
-            <li>
+              <hr></hr>
+              <li>
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  style={{ color: "#5f63dd" }}
+                />{" "}
+                Frontend Developer Challenge 2: Login
+              </li>
+              <hr></hr>
+              <li>
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  style={{ color: "#5f63dd" }}
+                />
+                Frontend Developer Challenge 3: Dashboard
+              </li>
+              <hr></hr>
+            </ul>
+          </Card>
+        </section>
+        <section className="second-section">
+          <Card className="card1">
+            <aside className="leader-head">
+              <h4>Leaderboard ?</h4>
+              <button className="buttons-17">View Leaderboard</button>
+            </aside>
+            <div className="form-components">
+              <form className="form-elements">
+                <select>
+                  <option>Prepr</option>
+                </select>
+                <select>
+                  <option>All Labs</option>
+                </select>
+                <select>
+                  <option>All Challenges</option>
+                </select>
+                <select>
+                  <option>Learning</option>
+                </select>
+              </form>{" "}
+              <button className="buttons-19">Clear Filters</button>
+              <div className="leader-ranks">
+                <h4>#</h4>
+                <h4>Username</h4>
+                <h4>Learning Points</h4>
+                <h4>Learning Rank</h4>
+                <h4>Achievement</h4>
+                <p>1</p>
+                <p>Thahira Sheerin</p>
+                <p>1792</p>
+                <p>6</p>
+                <p>2</p>
+                <p>2</p>
+                <p>Thameem</p>
+                <p>2134</p>
+                <p>7</p>
+                <p>5</p>
+                <p>3</p>
+                <p>Maryam</p>
+                <p>1792</p>
+                <p>4</p>
+                <p>2</p>
+                <p>4</p>
+                <p>Hana</p>
+                <p>1792</p>
+                <p>5</p>
+                <p>2</p>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <h4>
               {" "}
               <FontAwesomeIcon
-                icon={faCalendarDays}
-                style={{ color: "#5f63dd" }}
-              />
-              Frontend Developer Challenge 1: Web Page
-            </li>
-            <hr></hr>
-            <li>
-              <FontAwesomeIcon
-                icon={faCalendarDays}
-                style={{ color: "#5f63dd" }}
-              />{" "}
-              Frontend Developer Challenge 2: Login
-            </li>
-            <hr></hr>
-            <li>
-              <FontAwesomeIcon
-                icon={faCalendarDays}
-                style={{ color: "#5f63dd" }}
-              />
-              Frontend Developer Challenge 3: Dashboard
-            </li>
-            <hr></hr>
-          </ul>
-        </Card>
-      </section>
-      <section className="second-section">
-        <Card className="card1">
-          <aside className="leader-head">
-            <h4>Leaderboard ?</h4>
-            <button className="buttons-17">View Leaderboard</button>
-          </aside>
-          <div className="form-components">
-            <form className="form-elements">
-              <select>
-                <option>Prepr</option>
-              </select>
-              <select>
-                <option>All Labs</option>
-              </select>
-              <select>
-                <option>All Challenges</option>
-              </select>
-              <select>
-                <option>Learning</option>
-              </select>
-            </form>{" "}
-            <button className="buttons-19">Clear Filters</button>
-            <div className="leader-ranks">
-              <h4>#</h4>
-              <h4>Username</h4>
-              <h4>Learning Points</h4>
-              <h4>Learning Rank</h4>
-              <h4>Achievement</h4>
-              <p>1</p>
-              <p>Thahira Sheerin</p>
-              <p>1792</p>
-              <p>6</p>
-              <p>2</p>
-              <p>2</p>
-              <p>Thameem</p>
-              <p>2134</p>
-              <p>7</p>
-              <p>5</p>
-              <p>3</p>
-              <p>Maryam</p>
-              <p>1792</p>
-              <p>4</p>
-              <p>2</p>
-              <p>4</p>
-              <p>Hana</p>
-              <p>1792</p>
-              <p>5</p>
-              <p>2</p>
-            </div>
-          </div>
-        </Card>
-        <Card>
-          <h4>
-            {" "}
-            <FontAwesomeIcon icon={faAward} style={{ color: "#795ace" }} />{" "}
-            Latest Achievement
-          </h4>
-          <img src={achieve} style={{ width: "max-content" }}></img>
-          <h1 style={{ color: "#795ace", textAlign: "center" }}>
-            Participant{" "}
-          </h1>
-          <div className="acheive-buttons">
-            <button className="buttons-19">View Detail</button>
-            <br></br>
-            <button className="buttons-19">Share</button>
-          </div>
-        </Card>
-      </section>
-      <section className="third-section">
-        <Card>
-          <h4>
-            {" "}
-            <FontAwesomeIcon icon={faFlask} style={{ color: "#795ace" }} /> 2
-            Labs
-          </h4>
-          <ul className="tabs">
-            {tabsData2.map((tab, index) => (
-              <li
-                key={index}
-                className={index === activeTab2 ? "active" : ""}
-                onClick={() => handleTabClick2(index)}
-              >
-                {tab.title}
-              </li>
-            ))}
-          </ul>
-          <div className="tab-content">
-            {" "}
-            {tabsData2[activeTab2] && tabsData2[activeTab2].content}
-          </div>
-        </Card>
-        <Card>
-          <h4>
-            <FontAwesomeIcon
-              icon={faPuzzlePiece}
-              style={{ color: "#795ace" }}
-            />{" "}
-            18 Challenges
-          </h4>
-          <ul className="tabs">
-            {tabsData3.map((tab, index) => (
-              <li
-                key={index}
-                className={index === activeTab3 ? "active" : ""}
-                onClick={() => handleTabClick3(index)}
-              >
-                {tab.title}
-              </li>
-            ))}
-          </ul>
-          <div className="tab-content">
-            {" "}
-            {tabsData3[activeTab3] && tabsData3[activeTab3].content}
-          </div>
-        </Card>
-        <Card>
-          <div className="tab4-header">
-            <h4>
-              <FontAwesomeIcon
-                icon={faSheetPlastic}
+                icon={faAward}
                 style={{ color: "#795ace" }}
               />{" "}
-              2 Projects
+              Latest Achievement
             </h4>
-            <a href="/create/project">
-              <button className="buttons-17">Create</button>
-            </a>
-          </div>
+            <img src={achieve} style={{ width: "max-content" }}></img>
+            <h1 style={{ color: "#795ace", textAlign: "center" }}>
+              Participant{" "}
+            </h1>
+            <div className="acheive-buttons">
+              <button className="buttons-19">View Detail</button>
+              <br></br>
+              <button className="buttons-19">Share</button>
+            </div>
+          </Card>
+        </section>
+        <section className="third-section">
+          <Card>
+            <h4>
+              {" "}
+              <FontAwesomeIcon icon={faFlask} style={{ color: "#795ace" }} /> 2
+              Labs
+            </h4>
+            <ul className="tabs">
+              {tabsData2.map((tab, index) => (
+                <li
+                  key={index}
+                  className={index === activeTab2 ? "active" : ""}
+                  onClick={() => handleTabClick2(index)}
+                >
+                  {tab.title}
+                </li>
+              ))}
+            </ul>
+            <div className="tab-content">
+              {" "}
+              {tabsData2[activeTab2] && tabsData2[activeTab2].content}
+            </div>
+          </Card>
+          <Card>
+            <h4>
+              <FontAwesomeIcon
+                icon={faPuzzlePiece}
+                style={{ color: "#795ace" }}
+              />{" "}
+              18 Challenges
+            </h4>
+            <ul className="tabs">
+              {tabsData3.map((tab, index) => (
+                <li
+                  key={index}
+                  className={index === activeTab3 ? "active" : ""}
+                  onClick={() => handleTabClick3(index)}
+                >
+                  {tab.title}
+                </li>
+              ))}
+            </ul>
+            <div className="tab-content">
+              {" "}
+              {tabsData3[activeTab3] && tabsData3[activeTab3].content}
+            </div>
+          </Card>
+          <Card>
+            <div className="tab4-header">
+              <h4>
+                <FontAwesomeIcon
+                  icon={faSheetPlastic}
+                  style={{ color: "#795ace" }}
+                />{" "}
+                2 Projects
+              </h4>
+              <a href="/create/project">
+                <button className="buttons-17">Create</button>
+              </a>
+            </div>
 
-          <ul className="tabs">
-            {tabsData4.map((tab, index) => (
-              <li
-                key={index}
-                className={index === activeTab4 ? "active" : ""}
-                onClick={() => handleTabClick4(index)}
-              >
-                {tab.title}
-              </li>
-            ))}
-          </ul>
-          <div className="tab-content">
-            {" "}
-            {tabsData4[activeTab4] && tabsData4[activeTab4].content}
-          </div>
-        </Card>
-      </section>
-    </main></>
+            <ul className="tabs">
+              {tabsData4.map((tab, index) => (
+                <li
+                  key={index}
+                  className={index === activeTab4 ? "active" : ""}
+                  onClick={() => handleTabClick4(index)}
+                >
+                  {tab.title}
+                </li>
+              ))}
+            </ul>
+            <div className="tab-content">
+              {" "}
+              {tabsData4[activeTab4] && tabsData4[activeTab4].content}
+            </div>
+          </Card>
+        </section>
+      </main>
+    </>
   );
 };
 export default Dashboard;
