@@ -18,7 +18,7 @@ import logo from "./assets/logoNew.png";
 import { InputContext } from "./store/input-context";
 import { Link } from "react-router-dom";
 import MainNavigation from "./MainNavigation";
-
+import accessibilityIcon from "./assets/6175.png";
 const Dashboard = () => {
   const { input } = useContext(InputContext);
 
@@ -190,12 +190,16 @@ const Dashboard = () => {
   const handleTabClick4 = (index) => {
     setActiveTab4(index);
   };
+
   return (
     <>
     <MainNavigation></MainNavigation>
     <main className="main-container">
-      <h1>Welcome Thahira</h1>
-
+      <span className="access">
+          <h1>Welcome Thahira</h1>
+      <img src={accessibilityIcon} style={{width: "100px"}}></img>
+      </span>
+    
       <section className="first-section">
         <Card>
           <h4>My Progress</h4>

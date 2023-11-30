@@ -181,6 +181,14 @@ li {
   display: flex;
   justify-content: space-around;
 }
+.access {
+  display: flex;
+  justify-content: space-between;
+}
+.access img:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   
   .card {
