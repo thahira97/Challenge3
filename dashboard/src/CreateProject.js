@@ -1,7 +1,28 @@
 import "./CreateProject.css";
 import Card from "./Card";
-const CreateProject = () => {
+import { InputContext } from "./store/input-context";
+import { useContext, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import MainNavigation from "./MainNavigation";
+
+
+const CreateProject = ({location}) => {
+  // const { input } = location?.state || {};
+  const { input, setInput } = useContext(InputContext);
+  const history = useHistory();
+  console.log('input from createpjt', input)
+  // const projectInput = location?.state?.input || {};
+
+//  const { setInput } = useContext(InputContext);
+
+ const handleCreateProject = () => {
+  setInput(input);
+  history.push("/");
+};
+
   return (
+    <>
+    <MainNavigation></MainNavigation>
     <div className="main-container3">
       <h1>Create Project</h1>
       <p>
@@ -83,12 +104,19 @@ const CreateProject = () => {
         <a href="/create/project">
           <button className="buttons-17">Back</button>
         </a>
-        <a href="/">
-          {" "}
-          <button className="buttons-17">Create Project</button>
-        </a>
+        {/* <a href="/">
+          {" "} */}
+
+      <Link to="/">
+      <button className="buttons-17" onClick={handleCreateProject}>Create Project</button>
+    
+      </Link>
+ 
+      
+
+        {/* </a> */}
       </div>
-    </div>
+    </div></>
   );
 };
 export default CreateProject;

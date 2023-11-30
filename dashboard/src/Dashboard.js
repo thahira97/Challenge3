@@ -1,22 +1,29 @@
 import "./Dashboard.css";
 import Card from "./Card";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import MyChartComponent from "./ChartComponent";
 import notes from "./assets/last-visited-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import {
   faCalendarDays,
   faAward,
   faFlask,
   faSheetPlastic,
-  faPuzzlePiece
+  faPuzzlePiece,
 } from "@fortawesome/free-solid-svg-icons";
 import achieve from "./assets/Hfrsd4HcVe.png";
 import image from "./assets/pexels-elina-fairytale-3810968.jpg";
 import logo from "./assets/logoNew.png";
+import { InputContext } from "./store/input-context";
+import { Link } from "react-router-dom";
+import MainNavigation from "./MainNavigation";
+
 const Dashboard = () => {
+  const { input } = useContext(InputContext);
+
+  console.log("from dashboard page:", input);
+
   const tabsData = [
     {
       title: "Challenges",
@@ -92,7 +99,7 @@ const Dashboard = () => {
       ),
     },
     {
-      title: "Inviited",
+      title: "Invited",
       content: (
         <div>
           <p>You joined PreprLabs on Nov 13, 2023,Here is your lab journey. </p>
@@ -119,20 +126,18 @@ const Dashboard = () => {
 
   const tabsData4 = [
     {
-      title: `MyProjects`,
+      title: "MyProjects",
       content: (
         <div>
           <ul>
-            <li>
-              thahirasheerin - Frontend Developer Challenge 2: Login System
-            </li>
-            <li>
-              thahirasheerin - Frontend Developer Challenge 3: Dashboard and
-              Project Creation
-            </li>
-            <li>
-              thahirasheerin - Frontend Developer Challenge 1: Web Page Creation
-            </li>
+            <li>{input.slugBox}</li>
+            {input.image && (
+              <img src={input.image} style={{ width: "100px", display: "none" }}></img>
+            )}
+              {input.image && (
+              <img src={input.image} style={{ width: "100px", display: "" }}></img>
+            )}
+            <li>{input.textBox}</li>
           </ul>
 
           <img src={logo} alt="lab-img" style={{ width: "100px" }}></img>
@@ -186,6 +191,8 @@ const Dashboard = () => {
     setActiveTab4(index);
   };
   return (
+    <>
+    <MainNavigation></MainNavigation>
     <main className="main-container">
       <h1>Welcome Thahira</h1>
 
@@ -340,7 +347,13 @@ const Dashboard = () => {
           </div>
         </Card>
         <Card>
-          <h4><FontAwesomeIcon icon={faPuzzlePiece} style={{color:"#795ace"}}/> 18 Challenges</h4>
+          <h4>
+            <FontAwesomeIcon
+              icon={faPuzzlePiece}
+              style={{ color: "#795ace" }}
+            />{" "}
+            18 Challenges
+          </h4>
           <ul className="tabs">
             {tabsData3.map((tab, index) => (
               <li
@@ -359,13 +372,18 @@ const Dashboard = () => {
         </Card>
         <Card>
           <div className="tab4-header">
-            <h4><FontAwesomeIcon icon={faSheetPlastic} style={{color:"#795ace"}} /> 2 Projects</h4>
-         <a href="/create/project">
-          <button className="buttons-17">Create
-          </button>
-       </a>
+            <h4>
+              <FontAwesomeIcon
+                icon={faSheetPlastic}
+                style={{ color: "#795ace" }}
+              />{" "}
+              2 Projects
+            </h4>
+            <a href="/create/project">
+              <button className="buttons-17">Create</button>
+            </a>
           </div>
-          
+
           <ul className="tabs">
             {tabsData4.map((tab, index) => (
               <li
@@ -383,7 +401,7 @@ const Dashboard = () => {
           </div>
         </Card>
       </section>
-    </main>
+    </main></>
   );
 };
 export default Dashboard;
