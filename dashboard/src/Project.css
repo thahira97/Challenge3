@@ -90,3 +90,22 @@
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 767px) {
+  h1 {
+    padding: 30px;
+  }
+  .main-container{
+    width: 90%;
+  }
+  .main-container2 {
+    margin: 0;
+    padding: 0;
+   width: 90%;
+  }
+  .proj-detail1 {
+   flex-wrap: wrap;
+  }
+  .proj-detail2 {
+    flex-wrap: wrap;
+   }
+}
