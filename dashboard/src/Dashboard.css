@@ -46,7 +46,7 @@
 .first-section {
   display: flex;
   width: 100%;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   margin: 10px;
   justify-content: space-between;
 }
@@ -180,4 +180,12 @@ li {
 .tab4-header {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 767px) {
+  .card {
+    width: fit-content; 
+  }
+  .third-section{
+    flex-wrap: wrap;
+  }
 }

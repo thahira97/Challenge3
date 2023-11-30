@@ -8,3 +8,9 @@
   background: white;
   width: max-content;
 }
+/* @media (max-width: 767px) {
+  .card {
+    width: fit-content;
+     
+  }
+} */
