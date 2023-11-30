@@ -198,7 +198,7 @@ const Dashboard = () => {
     setActiveTab4(index);
   };
   const [show, setShow] = useState(false);
-  
+
   const [isOn1, setIsOn1] = useState(false);
 
   const handleButtonClick1 = () => {
@@ -215,6 +215,19 @@ const Dashboard = () => {
     setIsOn3(!isOn3);
   };
 
+  const [value, setValue] = useState("");
+  
+  const changeHandler = (event) => {
+    setValue(event.target.value);
+    console.log(event.target.value);
+  };
+
+  const [select, setSelect] = useState("");
+
+  const selectHandler = (event) => {
+    console.log(event.target.value);
+    setSelect(event.target.value);
+  };
 
   const openHandler = () => {
     setShow(true);
@@ -223,6 +236,13 @@ const Dashboard = () => {
     setShow(false);
   };
 
+  const resetHandler = () => {
+    setValue("");
+    setSelect("");
+    setIsOn1(false);
+    setIsOn2(false);
+    setIsOn3(false);
+  };
   return (
     <>
       <MainNavigation></MainNavigation>
@@ -237,12 +257,24 @@ const Dashboard = () => {
             ></img>
             {show && (
               <div className="accessibile-block">
-                <h4 style={{textAlign: "center"}}>Accessibility Settings</h4>
-                <form className="access-form" style={{textAlign: "center"}}>
-                  <input type="text" placeholder="Search"></input>
+                <h4 style={{ textAlign: "center" }}>Accessibility Settings</h4>
+                <form className="access-form" style={{ textAlign: "center" }}>
+                  <input
+                    value={value}
+                    type="text"
+                    id="searchbar"
+                    name="searchbar"
+                    placeholder="Search"
+                    onChange={changeHandler}
+                  ></input>
                 </form>
                 <hr></hr>
-                <select className="access-select" style={{width: "min-content", alignSelf: "center"}}>
+                <select
+                  value={select}
+                  className="access-select"
+                  onChange={selectHandler}
+                  style={{ width: "min-content", alignSelf: "center" }}
+                >
                   <option value="language">Select Language</option>
                   <option value="English">English</option>
                   <option value="French">French</option>
@@ -253,27 +285,43 @@ const Dashboard = () => {
                 <hr></hr>
                 <aside className="toggle-butts">
                   <div>
-                  <button className={isOn1 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick1}>
-      {isOn1 ? "ON" : "OFF"}
-    </button>Seizure Safe Profile
+                    <button
+                      className={isOn1 ? "buttons-17 on" : "buttons-17 off"}
+                      onClick={handleButtonClick1}
+                    >
+                      {isOn1 ? "ON" : "OFF"}
+                    </button>
+                    Seizure Safe Profile
                   </div>
-                 <hr></hr>
+                  <hr></hr>
                   <div>
-                  <button className={isOn2 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick2}>
-      {isOn2 ? "ON" : "OFF"}
-    </button>Vision Impaired
+                    <button
+                      className={isOn2 ? "buttons-17 on" : "buttons-17 off"}
+                      onClick={handleButtonClick2}
+                    >
+                      {isOn2 ? "ON" : "OFF"}
+                    </button>
+                    Vision Impaired
                   </div>
-                 <hr></hr>
+                  <hr></hr>
                   <div>
-                  <button className={isOn3 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick3}>
-      {isOn3 ? "ON" : "OFF"}
-    </button>ADHD Friendly
+                    <button
+                      className={isOn3 ? "buttons-17 on" : "buttons-17 off"}
+                      onClick={handleButtonClick3}
+                    >
+                      {isOn3 ? "ON" : "OFF"}
+                    </button>
+                    ADHD Friendly
                   </div>
                 </aside>
                 <hr></hr>
                 <span>
-                  <button className="buttons-17">Reset settings</button>
-                  <button  className="buttons-17" onClick={closeHandler}>Close</button>
+                  <button className="buttons-17" onClick={resetHandler}>
+                    Reset settings
+                  </button>
+                  <button className="buttons-17" onClick={closeHandler}>
+                    Close
+                  </button>
                 </span>
               </div>
             )}
