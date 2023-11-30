@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import Draggable from "react-draggable";
 import { useState } from "react";
-
+import "./AccessibleBlock.css"
 const AccessibleBlock = (props) => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const [isOn1, setIsOn1] = useState(false);
 
-  useEffect(() => {}, [show]);
 
  
   const closeHandler = () => {
@@ -54,9 +53,9 @@ const AccessibleBlock = (props) => {
 
   return (
     <Draggable>
-      <div className={`accessibile-block ${show ? "visible" : "hidden"}`}>
+      <div className={`accessibile-block ${props.show ? "visible" : "hidden"}`}>
         <h4 style={{ textAlign: "center" }}>Accessibility Settings</h4>
-        <form className="access-form" style={{ textAlign: "center" }}>
+        <form className="access-form">
           <input
             value={value}
             type="text"
@@ -66,12 +65,12 @@ const AccessibleBlock = (props) => {
             onChange={changeHandler}
           ></input>
         </form>
-        <hr></hr>
+        <br></br>
         <select
           value={select}
           className="access-select"
           onChange={selectHandler}
-          style={{ width: "min-content", alignSelf: "center" }}
+          style={{ width: "min-content", alignItems: "center", justifyItems:"center" }}
         >
           <option value="language">Select Language</option>
           <option value="English">English</option>
@@ -80,7 +79,8 @@ const AccessibleBlock = (props) => {
           <option value="Spanish">Spanish</option>
           <option value="Japanese">Japanese</option>
         </select>
-        <hr></hr>
+        <br></br>
+        <br></br>
         <aside className="toggle-butts">
           <div>
             <button
@@ -91,7 +91,7 @@ const AccessibleBlock = (props) => {
             </button>
             Seizure Safe Profile
           </div>
-          <hr></hr>
+          <br></br>
           <div>
             <button
               className={isOn2 ? "buttons-17 on" : "buttons-17 off"}
@@ -101,7 +101,7 @@ const AccessibleBlock = (props) => {
             </button>
             Vision Impaired
           </div>
-          <hr></hr>
+          <br></br>
           <div>
             <button
               className={isOn3 ? "buttons-17 on" : "buttons-17 off"}
@@ -112,7 +112,7 @@ const AccessibleBlock = (props) => {
             ADHD Friendly
           </div>
         </aside>
-        <hr></hr>
+        <br></br>
         <span>
           <button className="buttons-17" onClick={resetHandler}>
             Reset settings

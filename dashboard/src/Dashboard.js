@@ -220,7 +220,7 @@ const Dashboard = () => {
               onClick={openHandler}
               style={{ width: "100px" }}
             ></img>
-            {show && <AccessibleBlock showStateHandler={closeHandler} />}
+            {show && <AccessibleBlock showStateHandler={closeHandler} show={show}/>}
           </span>
         </span>
 

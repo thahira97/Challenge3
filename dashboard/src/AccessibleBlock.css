@@ -1,0 +1,16 @@
+/* AccessibleBlock.css */
+.accessibile-block {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Add other styling properties as needed */
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

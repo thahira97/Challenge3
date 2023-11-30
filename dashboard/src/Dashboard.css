@@ -189,16 +189,18 @@ li {
   cursor: pointer;
 }
 .accessibile-block{
+  padding: 20px;
   background-color: rgb(172, 172, 234);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+
 }
 .toggle-butts {
   display: flex;
   flex-direction: column;
-  align-self: center;
-  justify-items: stretch;
+  /* align-self: space-between;
+  justify-items: space-around; */
 }
 .access-form input {
   height: 5vh;
