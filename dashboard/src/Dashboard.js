@@ -198,6 +198,24 @@ const Dashboard = () => {
     setActiveTab4(index);
   };
   const [show, setShow] = useState(false);
+  
+  const [isOn1, setIsOn1] = useState(false);
+
+  const handleButtonClick1 = () => {
+    setIsOn1(!isOn1);
+  };
+  const [isOn2, setIsOn2] = useState(false);
+
+  const handleButtonClick2 = () => {
+    setIsOn2(!isOn2);
+  };
+  const [isOn3, setIsOn3] = useState(false);
+
+  const handleButtonClick3 = () => {
+    setIsOn3(!isOn3);
+  };
+
+
   const openHandler = () => {
     setShow(true);
   };
@@ -235,15 +253,21 @@ const Dashboard = () => {
                 <hr></hr>
                 <aside className="toggle-butts">
                   <div>
-                    <ToggleButton></ToggleButton>Seizure Safe Profile
+                  <button className={isOn1 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick1}>
+      {isOn1 ? "ON" : "OFF"}
+    </button>Seizure Safe Profile
                   </div>
                  <hr></hr>
                   <div>
-                    <ToggleButton></ToggleButton>Vision Impaired
+                  <button className={isOn2 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick2}>
+      {isOn2 ? "ON" : "OFF"}
+    </button>Vision Impaired
                   </div>
                  <hr></hr>
                   <div>
-                    <ToggleButton></ToggleButton>ADHD Friendly
+                  <button className={isOn3 ? "buttons-17 on" : "buttons-17 off"}  onClick={handleButtonClick3}>
+      {isOn3 ? "ON" : "OFF"}
+    </button>ADHD Friendly
                   </div>
                 </aside>
                 <hr></hr>
